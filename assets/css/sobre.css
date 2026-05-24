@@ -1,0 +1,54 @@
+.sobre{
+    width:90%;
+    margin:80px auto;
+
+    display:flex;
+    align-items:center;
+    gap:50px;
+}
+
+.sobre-img,
+.sobre-texto{
+    flex:1;
+}
+
+.sobre-texto h2{
+    font-size:40px;
+    margin:20px 0;
+}
+
+.sobre-texto p{
+    margin-bottom:15px;
+    line-height:1.8;
+    color:#666;
+}
+
+.btn-sobre{
+    display:inline-block;
+    padding:14px 30px;
+    background:var(--marrom);
+    color:white;
+    border-radius:30px;
+}
+
+.valores{
+    width:90%;
+    margin:80px auto;
+
+    display:flex;
+    justify-content:center;
+    gap:30px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    flex:1;
+}
+
+.card i{
+    font-size:40px;
+    color:var(--laranja);
+}

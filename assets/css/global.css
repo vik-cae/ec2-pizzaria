@@ -1,0 +1,50 @@
+/* IMPORTAÇÕES */
+
+@import url("./navBar.css");
+@import url("./footer.css");
+@import url("home.css");
+@import url("./sobre.css");
+@import url("contato.css");
+@import url("login.css");
+
+
+/* RESET GLOBAL */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+/* VARIÁVEIS */
+
+:root{
+
+    --bege:#F7F2EA;
+    --marrom:#8B5E3C;
+    --laranja:#F4AE19;
+    --texto:#222;
+    --branco:#fff;
+}
+
+
+/* CONFIGURAÇÕES GERAIS */
+
+body{
+
+    background:var(--bege);
+    font-family: Arial, sans-serif;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+img{
+    max-width:100%;
+}
