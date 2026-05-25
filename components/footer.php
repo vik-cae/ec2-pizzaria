@@ -1,7 +1,4 @@
-<?php
-$titulo = 'footer';
-include './components/head.php';
-?>
+
 
 <body>
     <footer class="footer">

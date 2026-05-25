@@ -1,0 +1,224 @@
+/* CONTATO */
+
+.contato{
+
+    width:90%;
+    margin:100px auto;
+}
+
+
+/* CAIXA PRINCIPAL */
+
+.contato-box{
+
+    background-image:url("./../img/backgr.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    border-radius:30px;
+
+    padding:60px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:50px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    min-height:600px;
+}
+
+
+/* CAMADA ESCURA SOBRE A IMAGEM */
+
+.contato-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.55);
+
+    z-index:1;
+}
+
+
+/* CONTEÚDO ACIMA DA CAMADA ESCURA */
+
+.contato-info,
+.form-contato{
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+/* TEXTO */
+
+.contato-info{
+
+    flex:1;
+}
+
+.contato-info span{
+
+    color:var(--laranja);
+
+    font-weight:bold;
+
+    font-size:18px;
+}
+
+.contato-info h2{
+
+    font-size:45px;
+
+    margin:20px 0;
+
+    color:white;
+}
+
+.contato-info p{
+
+    color:#f0f0f0;
+
+    line-height:1.8;
+}
+
+
+/* FORMULÁRIO */
+
+.form-contato{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+}
+
+
+/* INPUTS */
+
+.input-group{
+
+    position:relative;
+}
+
+.input-group i{
+
+    position:absolute;
+
+    top:18px;
+    left:15px;
+
+    font-size:20px;
+
+    color:#999;
+
+    z-index:3;
+}
+
+.input-group input,
+.input-group textarea{
+
+    width:100%;
+
+    padding:15px 15px 15px 50px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.92);
+
+    outline:none;
+
+    font-size:15px;
+}
+
+
+/* EFEITO AO CLICAR */
+
+.input-group input:focus,
+.input-group textarea:focus{
+
+    border:2px solid var(--laranja);
+}
+
+
+/* ÁREA DE TEXTO */
+
+.textarea-group textarea{
+
+    height:150px;
+
+    resize:none;
+}
+
+
+/* BOTÃO */
+
+.form-contato button{
+
+    border:none;
+
+    background:var(--marrom);
+
+    color:white;
+
+    padding:16px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.form-contato button:hover{
+
+    background:var(--laranja);
+}
+
+
+/* RESPONSIVIDADE */
+
+@media(max-width:900px){
+
+.contato-box{
+
+    flex-direction:column;
+
+    text-align:center;
+}
+
+.contato-info h2{
+
+    font-size:35px;
+}
+
+}

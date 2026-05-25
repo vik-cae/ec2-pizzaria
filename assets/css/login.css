@@ -1,0 +1,123 @@
+/* LOGIN */
+
+.login {
+
+    width: 90%;
+    margin: 100px auto;
+}
+
+
+.login-container {
+
+    background: white;
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    min-height: 600px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .08);
+}
+
+
+/* IMAGEM */
+
+.login-img {
+
+    flex: 1;
+}
+
+.login-img img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* FORM */
+
+.login-box {
+
+    flex: 1;
+
+    padding: 60px;
+
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-box span {
+
+    color: var(--laranja);
+    font-weight: bold;
+}
+
+.login-box h2 {
+
+    font-size: 45px;
+
+    margin: 15px 0;
+}
+
+.login-box p {
+
+    color: #666;
+
+    margin-bottom: 30px;
+}
+
+.input-login {
+
+    position: relative;
+
+    margin-bottom: 20px;
+}
+
+.input-login i {
+
+    position: absolute;
+
+    left: 15px;
+    top: 16px;
+
+    color: #999;
+}
+
+.input-login input {
+
+    width: 100%;
+
+    padding: 15px 15px 15px 45px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: #f4f4f4;
+
+    outline: none;
+}
+
+.login-box button {
+
+    border: none;
+
+    background: var(--marrom);
+
+    color: white;
+
+    padding: 15px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    margin-top: 20px;
+}

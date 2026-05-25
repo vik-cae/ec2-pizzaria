@@ -1,11 +1,12 @@
 /* IMPORTAÇÕES */
-
 @import url("./navBar.css");
 @import url("./footer.css");
-@import url("home.css");
+@import url("./home.css");
 @import url("./sobre.css");
-@import url("contato.css");
-@import url("login.css");
+@import url("./contato.css");
+@import url("./cardapio.css");
+@import url("./promocoes.css");
+@import url("./login.css");
 
 
 /* RESET GLOBAL */
@@ -47,4 +48,8 @@ ul{
 
 img{
     max-width:100%;
+}
+
+html{
+    scroll-behavior:smooth;
 }
