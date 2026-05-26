@@ -1,0 +1,120 @@
+/* PRODUTOS ADM */
+
+.produtos-admin {
+
+    width: 90%;
+    margin: 80px auto;
+}
+
+.produtos-admin h1 {
+
+    text-align: center;
+
+    margin-bottom: 50px;
+
+    color: var(--marrom);
+}
+
+
+.produtos-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 30px;
+}
+
+
+.produto-card {
+
+    background: white;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .08);
+
+    transition: .3s;
+}
+
+.produto-card:hover {
+
+    transform: translateY(-10px);
+}
+
+.produto-card img {
+
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+}
+
+.produto-info {
+
+    padding: 20px;
+}
+
+.produto-info h3 {
+
+    margin-bottom: 10px;
+}
+
+.produto-info p {
+
+    color: #666;
+
+    margin-bottom: 15px;
+}
+
+.produto-info span {
+
+    display: block;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    color: var(--marrom);
+
+    margin-bottom: 20px;
+}
+
+
+/* BOTÕES */
+
+.acoes {
+
+    display: flex;
+
+    gap: 10px;
+}
+
+.acoes a {
+
+    flex: 1;
+
+    text-align: center;
+
+    padding: 12px;
+
+    border-radius: 15px;
+
+    color: white;
+
+    font-weight: bold;
+}
+
+.editar {
+
+    background: #F4AE19;
+}
+
+.excluir {
+
+    background: #d9534f;
+}

@@ -1,3 +1,21 @@
+<?php
+
+if (session_status() === PHP_SESSION_NONE) {
+
+    session_start();
+}
+
+$totalCarrinho = 0;
+
+if (isset($_SESSION['carrinho'])) {
+
+    $totalCarrinho = count(
+        $_SESSION['carrinho']
+    );
+}
+
+?>
+
 <nav class="navbar">
 
     <div class="logo">
@@ -15,13 +33,15 @@
 
     <div class="nav-right">
 
-        <div class="carrinho">
+        <a href="./pages/pedido.php" class="carrinho">
 
             <i class='bx bx-cart'></i>
 
-            <span id="contador-carrinho">0</span>
+            <span id="contador-carrinho">
+                <?= $totalCarrinho ?>
+            </span>
 
-        </div>
+        </a>
 
         <div class="nav-btn">
 
@@ -32,6 +52,7 @@
             <a href="#" class="btn-pedido">
                 PEÇA AGORA
             </a>
+
 
         </div>
 

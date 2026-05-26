@@ -1,6 +1,42 @@
 <?php
+session_start();
+
 $titulo = "Login";
+
 include '../components/head.php';
+require_once __DIR__ . '/../config/conexao.php';
+
+if (isset($_POST['email'])) {
+
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+
+    $sql = "SELECT * FROM usuarios
+            WHERE email='$email'
+            AND senha='$senha'";
+
+    $resultado = mysqli_query(
+        $conexao,
+        $sql
+    );
+
+
+    if (mysqli_num_rows($resultado) > 0) {
+
+        $_SESSION['usuario'] = $email;
+
+        header("Location: ../admin/dashboard.php");
+
+        exit;
+    } else {
+
+        echo "<script>
+
+        alert('Email ou senha inválidos');
+
+        </script>";
+    }
+}
 ?>
 
 <body>
@@ -28,7 +64,8 @@ include '../components/head.php';
                     Faça login para acompanhar seus pedidos.
                 </p>
 
-                <form id="formLogin">
+
+                <form id="formLogin" method="POST">
 
                     <div class="input-login">
 
@@ -36,6 +73,7 @@ include '../components/head.php';
 
                         <input
                             type="email"
+                            name="email"
                             placeholder="Email"
                             required>
 
@@ -48,13 +86,17 @@ include '../components/head.php';
 
                         <input
                             type="password"
+                            name="senha"
                             placeholder="Senha"
                             required>
 
                     </div>
 
+
                     <button type="submit">
+
                         Entrar
+
                     </button>
 
                 </form>
@@ -66,6 +108,7 @@ include '../components/head.php';
     </section>
 
     <?php include '../components/footer.php'; ?>
+
 
 </body>
 

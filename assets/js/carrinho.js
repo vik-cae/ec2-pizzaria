@@ -1,32 +1,21 @@
-let contador = 0;
 
-const botoes = document.querySelectorAll(".add-carrinho");
+setTimeout(() => {
 
-const contadorCarrinho = document.getElementById("contador-carrinho");
+    const mensagem =
+        document.getElementById(
+            "mensagem-carrinho"
+        );
 
-const mensagem = document.getElementById("mensagem-carrinho");
+    if (mensagem) {
 
+        mensagem.style.opacity = "0";
 
-botoes.forEach(botao => {
-
-    botao.addEventListener("click", () => {
-
-        contador++;
-
-        contadorCarrinho.innerText = contador;
-
-
-        // mostra mensagem
-        mensagem.classList.add("ativo");
-
-
-        // esconde depois de 3 segundos
         setTimeout(() => {
 
-            mensagem.classList.remove("ativo");
+            mensagem.style.display = "none";
 
-        }, 3000);
+        }, 500);
 
-    });
+    }
 
-});
+}, 3000);

@@ -1,0 +1,28 @@
+.admin-menu{
+
+    display:flex;
+
+    gap:20px;
+
+    margin-top:30px;
+}
+
+.admin-menu a{
+
+    padding:15px 25px;
+
+    background:var(--marrom);
+
+    color:white;
+
+    border-radius:15px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.admin-menu a:hover{
+
+    background:var(--laranja);
+}

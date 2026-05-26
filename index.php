@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $titulo = "PIDA";
 include './components/head.php';
 ?>
@@ -9,7 +11,7 @@ include './components/head.php';
 
     <!-- HOME -->
     <section id="home">
-        <!-- banner -->
+
         <div class="hero-text">
 
             <span>Pizzas artesanais</span>
@@ -34,6 +36,7 @@ include './components/head.php';
             <img src="./assets/img/fundo.jpg">
 
         </div>
+
     </section>
 
 
@@ -53,82 +56,66 @@ include './components/head.php';
     <!-- CARDÁPIO -->
     <section id="cardapio" class="cardapio">
 
-        <h2>Nosso Cardápio</h2>
+        <?php
 
-        <div class="cards">
+        include './config/conexao.php';
 
-            <div class="pizza-card">
+        $sql = "SELECT * FROM produtos";
 
-                <img src="./assets/img/calabre.jpg" alt="Pizza Calabresa">
+        $resultado = mysqli_query(
+            $conexao,
+            $sql
+        );
 
-                <div class="pizza-info">
+        while ($produto = mysqli_fetch_assoc($resultado)) {
 
-                    <h3>Calabresa</h3>
+        ?>
 
-                    <p>
-                        Molho especial, queijo, cebola e calabresa.
-                    </p>
+            <div class="card">
 
-                    <span>R$ 35,00</span>
+                <img
+                    src="./assets/img/<?= $produto['imagem']; ?>"
+                    alt="<?= $produto['nome']; ?>">
 
-                    <button class="btn-carrinho add-carrinho">
-                        <i class='bx bx-cart-add'></i>
-                        Adicionar
+                <h3>
+
+                    <?= $produto['nome']; ?>
+
+                </h3>
+
+                <p>
+
+                    <?= $produto['descricao']; ?>
+
+                </p>
+
+                <span>
+
+                    R$ <?= number_format($produto['preco'], 2, ",", "."); ?>
+
+                </span>
+
+
+                <form action="./pages/adicionarCarrinho.php" method="POST">
+
+                    <input
+                        type="hidden"
+                        name="id"
+                        value="<?= $produto['id']; ?>">
+
+                    <button
+                        type="submit"
+                        class="btn-carrinho">
+
+                        Adicionar ao carrinho
+
                     </button>
 
-                </div>
+                </form>
 
             </div>
 
-
-            <div class="pizza-card">
-
-                <img src="./assets/img/portuguesa.jpg" alt="Pizza Portuguesa">
-
-                <div class="pizza-info">
-
-                    <h3>Portuguesa</h3>
-
-                    <p>
-                        Presunto, queijo, ovos, cebola e azeitonas.
-                    </p>
-
-                    <span>R$ 42,00</span>
-
-                    <button class="btn-carrinho add-carrinho">
-                        <i class='bx bx-cart-add'></i>
-                        Adicionar
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <div class="pizza-card">
-
-                <img src="./assets/img/frango.jpg" alt="Pizza Frango">
-
-                <div class="pizza-info">
-
-                    <h3>Frango Catupiry</h3>
-
-                    <p>
-                        Molho especial, frango desfiado, catupiry e queijo.
-                    </p>
-
-                    <span>R$ 40,00</span>
-
-                    <button class="btn-carrinho add-carrinho">
-                        <i class='bx bx-cart-add'></i>
-                        Adicionar
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
+        <?php } ?>
 
     </section>
 
@@ -248,14 +235,50 @@ include './components/head.php';
 
     </section>
 
-    <div id="mensagem-carrinho" class="mensagem-carrinho">
 
-        <i class='bx bx-check-circle'></i>
-        Produto adicionado ao carrinho!
+    <!-- MENSAGEM CARRINHO -->
 
-    </div>
+    <?php if (isset($_SESSION['mensagem'])) { ?>
+
+        <div id="mensagem-carrinho" class="mensagem-carrinho ativo">
+
+            <i class='bx bx-check-circle'></i>
+
+            <?= $_SESSION['mensagem']; ?>
+
+        </div>
+
+        <?php unset($_SESSION['mensagem']); ?>
+
+    <?php } ?>
+
 
     <?php include './components/footer.php'; ?>
 
-    <script src="./assets/js/carrinho.js"></script>
+
+    <script>
+        setTimeout(() => {
+
+            const mensagem =
+                document.getElementById(
+                    "mensagem-carrinho"
+                );
+
+            if (mensagem) {
+
+                mensagem.style.opacity = "0";
+
+                setTimeout(() => {
+
+                    mensagem.style.display = "none";
+
+                }, 500);
+
+            }
+
+        }, 3000);
+    </script>
+
 </body>
+
+</html>

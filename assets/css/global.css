@@ -7,6 +7,11 @@
 @import url("./cardapio.css");
 @import url("./promocoes.css");
 @import url("./login.css");
+@import url("./dashboard.css");
+@import url("./cadastrar-prod.css");
+@import url("./ver-produtos.css");
+@import url("./carrinho.css");
+@import url("./pedido-adm.css");
 
 
 /* RESET GLOBAL */
