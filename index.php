@@ -53,6 +53,8 @@ include './components/head.php';
     </section>
 
 
+    <h1>Cardapio</h1>
+    
     <!-- CARDÁPIO -->
     <section id="cardapio" class="cardapio">
 
@@ -70,6 +72,7 @@ include './components/head.php';
         while ($produto = mysqli_fetch_assoc($resultado)) {
 
         ?>
+
 
             <div class="card">
 
@@ -207,10 +210,13 @@ include './components/head.php';
                     <input
                         type="tel"
                         placeholder="Telefone"
+                        minlength="11"
+                        maxlength="11"
+                        pattern="[0-9]{11}"
+                        oninput="this.value=this.value.replace(/[^0-9]/g,'')"
                         required>
 
                 </div>
-
 
                 <div class="input-group textarea-group">
 

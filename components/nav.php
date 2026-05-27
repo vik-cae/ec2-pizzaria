@@ -24,11 +24,11 @@ if (isset($_SESSION['carrinho'])) {
     </div>
 
     <ul class="menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#cardapio">Cardápio</a></li>
-        <li><a href="#promocoes">Promoções</a></li>
-        <li><a href="#contato">Contato</a></li>
+        <li><a href="/ec2-pizzaria/index.php">Home</a></li>
+        <li><a href="/ec2-pizzaria/index.php#sobre">Sobre</a></li>
+        <li><a href="/ec2-pizzaria/index.php#cardapio">Cardápio</a></li>
+        <li><a href="/ec2-pizzaria/index.php#promocoes">Promoções</a></li>
+        <li><a href="/ec2-pizzaria/index.php#contato">Contato</a></li>
     </ul>
 
     <div class="nav-right">

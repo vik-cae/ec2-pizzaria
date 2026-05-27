@@ -18,7 +18,7 @@ include '../components/head.php';
 
 <body>
 
-    <?php include '../components/nav.php'; ?>
+    <?php include '../components/nav-adm.php'; ?>
 
     <section class="produtos-admin">
 
