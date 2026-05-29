@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 require_once __DIR__ . '/../config/conexao.php';
 
 $id = $_POST['id'];
@@ -19,6 +17,4 @@ mysqli_query(
     $sql
 );
 
-header("Location: pedidos.php");
-
-exit;
+echo "Cliente avisado com sucesso!";

@@ -1,28 +1,209 @@
-.admin-menu{
+/* DASHBOARD ADM */
 
-    display:flex;
+.dashboard {
 
-    gap:20px;
+    width: 90%;
 
-    margin-top:30px;
+    margin: 60px auto;
 }
 
-.admin-menu a{
+.dashboard-topo {
 
-    padding:15px 25px;
+    display: flex;
 
-    background:var(--marrom);
+    justify-content: space-between;
 
-    color:white;
+    align-items: center;
 
-    border-radius:15px;
-
-    font-weight:bold;
-
-    transition:.3s;
+    margin-bottom: 50px;
 }
 
-.admin-menu a:hover{
+.subtitulo {
 
-    background:var(--laranja);
+    color: var(--laranja);
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    text-transform: uppercase;
+}
+
+.dashboard-topo h1 {
+
+    font-size: 38px;
+
+    color: var(--marrom);
+
+    margin-top: 10px;
+}
+
+.btn-sair {
+
+    padding: 14px 25px;
+
+    background: #d9534f;
+
+    color: white;
+
+    border-radius: 15px;
+
+    font-weight: bold;
+
+    transition: .3s;
+}
+
+.btn-sair:hover {
+
+    transform: translateY(-3px);
+}
+
+
+/* CARDS */
+
+.cards-dashboard {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+
+    margin-bottom: 50px;
+}
+
+.card-dashboard {
+
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .08);
+
+    transition: .3s;
+}
+
+.card-dashboard:hover {
+
+    transform: translateY(-8px);
+}
+
+.icone-card {
+
+    width: 70px;
+
+    height: 70px;
+
+    border-radius: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #fff3df;
+}
+
+.icone-card i {
+
+    font-size: 35px;
+
+    color: var(--laranja);
+}
+
+.card-dashboard span {
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+.card-dashboard h2 {
+
+    margin-top: 8px;
+
+    color: var(--marrom);
+
+    font-size: 28px;
+}
+
+.destaque {
+
+    background: linear-gradient(135deg, #f4ae19, #ffcb67);
+}
+
+.destaque h2,
+.destaque span,
+.destaque i {
+
+    color: white;
+}
+
+.destaque .icone-card {
+
+    background: rgba(255, 255, 255, .2);
+}
+
+
+/* AÇÕES */
+
+.acoes-dashboard {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 30px;
+}
+
+.box-acao {
+
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 35px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .08);
+
+    transition: .3s;
+}
+
+.box-acao:hover {
+
+    transform: translateY(-8px);
+}
+
+.box-acao i {
+
+    font-size: 45px;
+
+    color: var(--laranja);
+
+    margin-bottom: 20px;
+}
+
+.box-acao h3 {
+
+    color: var(--marrom);
+
+    margin-bottom: 10px;
+}
+
+.box-acao p {
+
+    color: #777;
+
+    line-height: 1.5;
 }

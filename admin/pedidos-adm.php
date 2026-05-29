@@ -10,7 +10,7 @@ if (!isset($_SESSION['usuario'])) {
 
 require_once __DIR__ . '/../config/conexao.php';
 
-$titulo = "Pedidos";
+$titulo = "Pedidos Recebidos";
 
 include '../components/head.php';
 
@@ -22,14 +22,33 @@ include '../components/head.php';
 
     <section class="pedidos-admin">
 
-        <h1>Pedidos Recebidos</h1>
+        <div class="topo-pedidos">
+
+            <div>
+
+                <span class="subtitulo">
+
+                    Painel de Pedidos
+
+                </span>
+
+                <h1>
+
+                    Pedidos Recebidos
+
+                </h1>
+
+            </div>
+
+        </div>
+
 
         <div class="pedidos-grid">
 
             <?php
 
             $sql = "SELECT * FROM pedidos
-    ORDER BY data_pedido DESC";
+            ORDER BY data_pedido DESC";
 
             $resultado = mysqli_query(
                 $conexao,
@@ -42,42 +61,65 @@ include '../components/head.php';
 
                 <div class="pedido-card">
 
-                    <h2>
+                    <div class="pedido-topo">
 
-                        Pedido #<?= $pedido['id']; ?>
+                        <h2>
 
-                    </h2>
+                            Pedido #<?= $pedido['id']; ?>
 
-                    <p>
+                        </h2>
 
-                        Cliente:
-                        <?= $pedido['cliente']; ?>
+                        <span class="status">
 
-                    </p>
+                            <?= $pedido['status']; ?>
 
-                    <p>
+                        </span>
 
-                        Total:
-                        R$
-                        <?= number_format(
-                            $pedido['total'],
-                            2,
-                            ",",
-                            "."
-                        ); ?>
+                    </div>
 
-                    </p>
 
-                    <p>
+                    <div class="pedido-info">
 
-                        Data:
-                        <?= $pedido['data_pedido']; ?>
+                        <p>
 
-                    </p>
+                            <strong>Cliente:</strong>
+
+                            <?= $pedido['cliente']; ?>
+
+                        </p>
+
+                        <p>
+
+                            <strong>Total:</strong>
+
+                            R$
+                            <?= number_format(
+                                $pedido['total'],
+                                2,
+                                ",",
+                                "."
+                            ); ?>
+
+                        </p>
+
+                        <p>
+
+                            <strong>Data:</strong>
+
+                            <?= date(
+                                "d/m/Y H:i",
+                                strtotime($pedido['data_pedido'])
+                            ); ?>
+
+                        </p>
+
+                    </div>
+
 
                     <form
-                        action="alterarStatus.php"
-                        method="POST">
+                        action="./alterarStatus.php"
+                        method="POST"
+                        class="form-status">
 
                         <input
                             type="hidden"
@@ -123,7 +165,7 @@ include '../components/head.php';
                             type="submit"
                             class="btn-status">
 
-                            Atualizar
+                            Atualizar Status
 
                         </button>
 
@@ -136,6 +178,53 @@ include '../components/head.php';
         </div>
 
     </section>
+
+
+    <script>
+        const formularios = document.querySelectorAll(".form-status");
+
+        formularios.forEach(form => {
+
+            form.addEventListener("submit", async (e) => {
+
+                e.preventDefault();
+
+                const formData = new FormData(form);
+
+                const resposta = await fetch(
+                    "./alterarStatus.php", {
+                        method: "POST",
+                        body: formData
+                    }
+                );
+
+                const texto = await resposta.text();
+
+                mostrarMensagem(texto);
+
+            });
+
+        });
+
+
+        function mostrarMensagem(msg) {
+
+            const div = document.createElement("div");
+
+            div.classList.add("msg-status");
+
+            div.innerText = msg;
+
+            document.body.appendChild(div);
+
+            setTimeout(() => {
+
+                div.remove();
+
+            }, 4000);
+
+        }
+    </script>
 
 </body>
 

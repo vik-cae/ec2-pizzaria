@@ -1,69 +1,145 @@
-/* PEDIDOS ADM */
+/* PEDIDOS RECEBIDOS */
 
 .pedidos-admin {
 
     width: 90%;
-    margin: 80px auto;
+
+    margin: 60px auto;
 }
 
-.pedidos-admin h1 {
+.topo-pedidos {
 
-    text-align: center;
+    margin-bottom: 40px;
+}
 
-    margin-bottom: 50px;
+.topo-pedidos h1 {
+
+    font-size: 38px;
 
     color: var(--marrom);
+
+    margin-top: 10px;
 }
+
+.subtitulo {
+
+    color: var(--laranja);
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    text-transform: uppercase;
+}
+
+
+/* GRID */
 
 .pedidos-grid {
 
     display: grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(300px, 1fr));
+        repeat(auto-fit, minmax(320px, 1fr));
 
     gap: 30px;
 }
+
+
+/* CARD */
 
 .pedido-card {
 
     background: white;
 
+    border-radius: 25px;
+
     padding: 25px;
 
-    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .08);
 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+    transition: .3s;
 }
 
-.pedido-card h2 {
+.pedido-card:hover {
 
-    margin-bottom: 15px;
+    transform: translateY(-8px);
+}
+
+
+/* TOPO */
+
+.pedido-topo {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.pedido-topo h2 {
 
     color: var(--marrom);
 }
 
-.pedido-card p {
+.status {
 
-    margin-bottom: 10px;
+    background: #fff3df;
+
+    color: var(--laranja);
+
+    padding: 8px 15px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+
+    font-weight: bold;
 }
 
-.pedido-card select {
+
+/* INFO */
+
+.pedido-info {
+
+    margin-bottom: 25px;
+}
+
+.pedido-info p {
+
+    margin-bottom: 12px;
+
+    color: #555;
+
+    line-height: 1.5;
+}
+
+
+/* FORM */
+
+.form-status select {
 
     width: 100%;
 
-    padding: 12px;
+    padding: 14px;
 
-    margin: 15px 0;
+    border-radius: 15px;
 
-    border-radius: 10px;
+    border: 1px solid #ddd;
+
+    margin-bottom: 15px;
+
+    outline: none;
 }
 
 .btn-status {
 
     width: 100%;
 
-    padding: 12px;
+    padding: 14px;
 
     border: none;
 
@@ -76,4 +152,112 @@
     font-weight: bold;
 
     cursor: pointer;
+
+    transition: .3s;
+}
+
+.btn-status:hover {
+
+    transform: translateY(-3px);
+
+    background: var(--marrom);
+}
+
+/* MENSAGEM STATUS */
+
+.msg-status {
+
+    position: fixed;
+
+    top: 30px;
+
+    right: 30px;
+
+    background: #4CAF50;
+
+    color: white;
+
+    padding: 15px 25px;
+
+    border-radius: 15px;
+
+    font-weight: bold;
+
+    z-index: 9999;
+
+    animation: sumir 4s forwards;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .15);
+}
+
+
+/* ANIMAÇÃO */
+
+@keyframes sumir {
+
+    0% {
+
+        opacity: 0;
+
+        transform: translateY(-20px);
+    }
+
+    10% {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+    80% {
+
+        opacity: 1;
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform: translateY(-20px);
+
+        visibility: hidden;
+    }
+}
+
+/* SEM PEDIDO */
+
+.sem-pedido {
+
+    max-width: 500px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 50px 30px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .08);
+}
+
+.sem-pedido i {
+
+    font-size: 70px;
+
+    color: var(--laranja);
+
+    margin-bottom: 20px;
+}
+
+.sem-pedido h2 {
+
+    color: var(--marrom);
+
+    margin-bottom: 15px;
+}
+
+.sem-pedido p {
+
+    color: #777;
 }

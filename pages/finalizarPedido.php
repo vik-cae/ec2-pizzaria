@@ -58,6 +58,8 @@ $pedidoId =
         $conexao
     );
 
+$_SESSION['ultimo_pedido'] = $pedidoId;
+
 
 /* salvar produtos do pedido */
 

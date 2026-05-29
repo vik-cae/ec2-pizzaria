@@ -29,6 +29,15 @@ if (isset($_SESSION['carrinho'])) {
         <li><a href="/ec2-pizzaria/index.php#cardapio">Cardápio</a></li>
         <li><a href="/ec2-pizzaria/index.php#promocoes">Promoções</a></li>
         <li><a href="/ec2-pizzaria/index.php#contato">Contato</a></li>
+        <li>
+
+            <a href="./pages/meuPedido.php">
+
+                Acompanhar Pedido
+
+            </a>
+
+        </li>
     </ul>
 
     <div class="nav-right">

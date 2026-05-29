@@ -54,7 +54,7 @@ include './components/head.php';
 
 
     <h1>Cardapio</h1>
-    
+
     <!-- CARDÁPIO -->
     <section id="cardapio" class="cardapio">
 
@@ -255,6 +255,18 @@ include './components/head.php';
         </div>
 
         <?php unset($_SESSION['mensagem']); ?>
+
+    <?php } ?>
+
+    <?php if (isset($_SESSION['ultimo_pedido'])) { ?>
+
+        <a
+            href="./pages/meuPedido.php"
+            class="btn-acompanhar">
+
+            Acompanhar Pedido
+
+        </a>
 
     <?php } ?>
 
