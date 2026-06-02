@@ -208,3 +208,45 @@
 
     cursor: pointer;
 }
+
+.titulo-cardapio {
+
+    text-align: center;
+
+    width: 100%;
+
+    margin: 80px auto 50px;
+}
+
+.titulo-cardapio span {
+
+    display: block;
+
+    color: #f4ae19;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+.titulo-cardapio h2 {
+
+    font-size: 42px;
+
+    margin: 15px 0;
+
+    color: #0f1c34;
+}
+
+.titulo-cardapio p {
+
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    color: #666;
+
+    line-height: 1.6;
+}

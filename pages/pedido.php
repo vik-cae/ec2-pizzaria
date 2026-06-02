@@ -113,8 +113,9 @@ WHERE id='$id'";
                 <form action="finalizarPedido.php" method="POST">
 
                     <button
-                        type="submit"
-                        class="btn-finalizar">
+                        type="button"
+                        class="btn-finalizar"
+                        onclick="abrirModal()">
 
                         Finalizar Pedido
 
@@ -136,6 +137,96 @@ WHERE id='$id'";
 
     </section>
 
-</body>
+    <div id="modalPedido" class="modal">
 
-</html>
+        <div class="modal-content">
+
+            <span
+                class="fechar"
+                onclick="fecharModal()">
+
+                &times;
+
+            </span>
+
+            <h2>Dados da Entrega</h2>
+
+            <form
+                action="finalizarPedido.php"
+                method="POST">
+
+                <input
+                    type="text"
+                    name="nome"
+                    placeholder="Nome completo"
+                    required>
+
+                <input
+                    type="tel"
+                    placeholder="Telefone"
+                    minlength="11"
+                    maxlength="11"
+                    pattern="[0-9]{11}"
+                    oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+                    required>
+
+
+                <input
+                    type="text"
+                    name="endereco"
+                    placeholder="Endereço completo"
+                    required>
+
+                <select
+                    name="pagamento"
+                    required>
+
+                    <option value="">
+                        Forma de pagamento
+                    </option>
+
+                    <option value="Pix">
+                        Pix
+                    </option>
+
+                    <option value="Cartão">
+                        Cartão
+                    </option>
+
+                    <option value="Dinheiro">
+                        Dinheiro
+                    </option>
+
+                </select>
+
+                <button
+                    type="submit"
+                    class="btn-confirmar">
+
+                    Confirmar Pedido
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+        function abrirModal() {
+
+            document
+                .getElementById("modalPedido")
+                .style.display = "flex";
+        }
+
+        function fecharModal() {
+
+            document
+                .getElementById("modalPedido")
+                .style.display = "none";
+        }
+    </script>
+
+</body>
