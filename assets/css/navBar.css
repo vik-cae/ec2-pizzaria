@@ -6,7 +6,14 @@
     box-sizing: border-box;
 }
 
+:root {
+
+    --marrom: #8B5E3C;
+    --laranja: #F4AE19;
+}
+
 body {
+
     background: #F7F2EA;
     font-family: Arial, sans-serif;
 }
@@ -15,8 +22,10 @@ body {
 /* NAVBAR */
 
 .navbar {
+
     width: 100%;
     height: 90px;
+
     background: #fff;
 
     display: flex;
@@ -32,12 +41,14 @@ body {
 /* LOGO */
 
 .logo h1 {
+
     font-size: 35px;
     color: #1f1f1f;
     font-weight: 800;
 }
 
 .logo span {
+
     font-size: 12px;
     color: #8d8d8d;
 }
@@ -46,12 +57,14 @@ body {
 /* MENU */
 
 .menu {
+
     display: flex;
     list-style: none;
     gap: 35px;
 }
 
 .menu a {
+
     text-decoration: none;
     color: #222;
     font-size: 14px;
@@ -60,44 +73,28 @@ body {
 }
 
 .menu a:hover {
+
     color: #F4AE19;
 }
 
 
-/* BOTÃO */
-
-.nav-btn a {
-
-    background: #8B5E3C;
-    color: white;
-
-    padding: 14px 30px;
-
-    border-radius: 30px;
-
-    text-decoration: none;
-
-    font-weight: bold;
-
-    transition: .4s;
-}
-
-.nav-btn a:hover {
-
-    background: #F4AE19;
-}
+/* ÁREA DIREITA */
 
 .nav-right {
 
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 20px;
 }
+
+
+/* CARRINHO */
 
 .carrinho {
 
     position: relative;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .carrinho i {
@@ -119,7 +116,6 @@ body {
     border-radius: 50%;
 
     background: var(--laranja);
-
     color: white;
 
     display: flex;
@@ -130,49 +126,8 @@ body {
     font-weight: bold;
 }
 
-.mensagem-carrinho {
 
-    position: fixed;
-
-    top: 30px;
-    right: -350px;
-
-    background: #8B5E3C;
-
-    color: white;
-
-    padding: 15px 25px;
-
-    border-radius: 15px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 10px;
-
-    z-index: 9999;
-
-    transition: .5s;
-
-    box-shadow: 0 5px 20px rgba(0, 0, 0, .2);
-}
-
-.mensagem-carrinho i {
-
-    font-size: 22px;
-}
-
-.mensagem-carrinho.ativo {
-
-    right: 30px;
-}
-
-.nav-right {
-
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
+/* BOTÕES */
 
 .nav-btn {
 
@@ -186,6 +141,8 @@ body {
     padding: 14px 28px;
 
     border-radius: 30px;
+
+    text-decoration: none;
 
     font-weight: bold;
 
@@ -220,7 +177,47 @@ body {
     background: var(--laranja);
 }
 
-/* MENU PEDIDO */
+
+/* MENSAGEM CARRINHO */
+
+.mensagem-carrinho {
+
+    position: fixed;
+
+    top: 30px;
+    right: -350px;
+
+    background: var(--marrom);
+
+    color: white;
+
+    padding: 15px 25px;
+
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    z-index: 9999;
+
+    transition: .5s;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .2);
+}
+
+.mensagem-carrinho i {
+
+    font-size: 22px;
+}
+
+.mensagem-carrinho.ativo {
+
+    right: 30px;
+}
+
+
+/* MODAL PEDIDO */
 
 .modal-pedido {
 
@@ -229,17 +226,14 @@ body {
     position: fixed;
 
     top: 0;
-
     left: 0;
 
     width: 100%;
-
     height: 100%;
 
     background: rgba(0, 0, 0, .6);
 
     justify-content: center;
-
     align-items: center;
 
     z-index: 9999;
@@ -250,7 +244,6 @@ body {
     background: white;
 
     width: 400px;
-
     max-width: 90%;
 
     padding: 30px;
@@ -265,21 +258,25 @@ body {
 .modal-pedido-conteudo h2 {
 
     margin-bottom: 25px;
+
+    color: #0f1c34;
 }
 
 .opcao-menu {
 
     display: block;
 
-    margin-bottom: 15px;
+    margin: 15px 0;
 
     padding: 15px;
 
     border-radius: 12px;
 
-    background: #f4ae19;
+    background: var(--laranja);
 
     color: white;
+
+    text-decoration: none;
 
     font-weight: bold;
 
@@ -296,7 +293,6 @@ body {
     position: absolute;
 
     right: 15px;
-
     top: 10px;
 
     font-size: 30px;

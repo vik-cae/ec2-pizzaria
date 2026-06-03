@@ -199,9 +199,10 @@ include './components/head.php';
 
                         <input
                             type="text"
-                            placeholder="Seu nome"
+                            name="nome"
+                            placeholder="Nome completo"
+                            oninput="this.value=this.value.replace(/[^A-Za-zÀ-ÿ\s]/g,'')"
                             required>
-
                     </div>
 
 
