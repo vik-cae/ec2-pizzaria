@@ -161,12 +161,16 @@ include './components/head.php';
 
                 <h3>R$ 120,90</h3>
 
-                <button class="btn-promo">
+                <form action="./pages/adicionarCarrinho.php" method="POST">
 
-                    Pedir agora
+                    <input type="hidden" name="id" value="<?= $promo['id']; ?>">
+                    <input type="hidden" name="tipo" value="promo">
 
-                </button>
+                    <button type="submit" class="btn-promo">
+                        Pedir agora
+                    </button>
 
+                </form>
             </div>
 
         </section>
