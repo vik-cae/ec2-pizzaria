@@ -163,7 +163,6 @@ include './components/head.php';
 
                 <form action="./pages/adicionarCarrinho.php" method="POST">
 
-                    <input type="hidden" name="id" value="<?= $promo['id']; ?>">
                     <input type="hidden" name="tipo" value="promo">
 
                     <button type="submit" class="btn-promo">
